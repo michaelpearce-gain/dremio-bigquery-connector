@@ -22,12 +22,12 @@
 
   <parent>
     <groupId>com.dremio.plugins</groupId>
-    <version>18.2.0-SNAPSHOT</version>
+    <version>18.3.0-SNAPSHOT</version>
     <artifactId>dremio-bigquery-plugin</artifactId>
   </parent>
 
   <groupId>com.simba.googlebigquery</groupId>
-  <version>${version.bigquery.jdbc}</version>
+  <version>${version.simba.google.bigquery.jdbc}</version>
   <artifactId>googlebigquery-jdbc42-shaded</artifactId>
   <name>Plugins - BigQuery JDBC Driver Shaded</name>
   <packaging>jar</packaging>
@@ -37,25 +37,45 @@
     <dependency>
       <groupId>com.simba.googlebigquery</groupId>
       <artifactId>googlebigquery-jdbc42</artifactId>
-      <version>${version.bigquery.jdbc}</version>
+      <version>${version.simba.google.bigquery.jdbc}</version>
+    </dependency>
+
+    <dependency>
+      <groupId>com.google.api-client</groupId>
+      <artifactId>google-api-client</artifactId>
+      <version>${version.google.api}</version>
     </dependency>
 
     <dependency>
       <groupId>com.google.cloud</groupId>
       <artifactId>google-cloud-bigquerystorage</artifactId>
-      <version>${version.bigquery.storage}</version>
+      <version>${version.google.cloud.bigquerystorage}</version>
     </dependency>
+
+    <dependency>
+      <groupId>com.google.apis</groupId>
+      <artifactId>google-api-services-bigquery</artifactId>
+      <version>${version.google.api.services.bigquery}</version>
+    </dependency>
+
+    <dependency>
+      <groupId>com.google.api.grpc</groupId>
+      <artifactId>grpc-google-cloud-bigquerystorage-v1beta1</artifactId>
+      <version>${version.grpc.google.cloud.biqquerystorage}</version>
+    </dependency>
+
+
 
     <dependency>
       <groupId>org.apache.avro</groupId>
       <artifactId>avro</artifactId>
-      <version>1.10.2</version>
+      <version>${version.apache.avro}</version>
     </dependency>
 
     <dependency>
       <groupId>joda-time</groupId>
       <artifactId>joda-time</artifactId>
-      <version>2.10.10</version>
+      <version>${version.joda.time}</version>
     </dependency>
 
   </dependencies>
@@ -76,6 +96,7 @@
         <version>3.2.4</version>
         <configuration>
           <minimizeJar>true</minimizeJar>
+          <keepDependenciesWithProvidedScope>false</keepDependenciesWithProvidedScope>
           <transformers>
             <transformer implementation="org.apache.maven.plugins.shade.resource.ServicesResourceTransformer"/>
           </transformers>

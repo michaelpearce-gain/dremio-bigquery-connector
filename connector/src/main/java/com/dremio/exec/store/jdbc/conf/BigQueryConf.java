@@ -110,11 +110,11 @@ public class BigQueryConf extends AbstractArpConf<BigQueryConf> {
     // Service-account based auth
     attributes.put("OAuthType", "0");
     // Query timeout
-    attributes.put("Timeout", Integer.toString(this.queryTimeout));
+    //attributes.put("Timeout", Integer.toString(this.queryTimeout));
     // Allow result sets larger than 128MB
-    attributes.put("AllowLargeResults", "1");
+    //attributes.put("AllowLargeResults", "1");
     // Use modern BQ SQL dialect
-    attributes.put("QueryDialect", "SQL");
+    //attributes.put("QueryDialect", "SQL");
     // Check if we have a custom KMS key, use it if provided
     if (this.customerKmsKeyName != null && !this.customerKmsKeyName.isEmpty()) {
       attributes.put("KMSKeyName", this.customerKmsKeyName);
@@ -142,7 +142,7 @@ public class BigQueryConf extends AbstractArpConf<BigQueryConf> {
         .build();
   }
 
-  private String getOauthPrivateKeyPath() throws IOException {
+  public String getOauthPrivateKeyPath() throws IOException {
     final File temp = File.createTempFile("bqk", ".json");
     temp.deleteOnExit();
     final BufferedWriter bw = new BufferedWriter(new FileWriter(temp));

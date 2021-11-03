@@ -22,7 +22,7 @@
 
   <parent>
     <groupId>com.dremio.plugins</groupId>
-    <version>18.2.0-SNAPSHOT</version>
+    <version>18.3.0-SNAPSHOT</version>
     <artifactId>dremio-bigquery-plugin</artifactId>
   </parent>
   <artifactId>dremio-bigquery-driver</artifactId>
@@ -46,7 +46,7 @@
           </execution>
         </executions>
         <configuration>
-          <url>https://storage.googleapis.com/simba-bq-release/jdbc/SimbaJDBCDriverforGoogleBigQuery42_${version.bigquery.jdbc}.zip</url>
+          <url>https://storage.googleapis.com/simba-bq-release/jdbc/SimbaJDBCDriverforGoogleBigQuery42_${version.simba.google.bigquery.jdbc}.zip</url>
           <unpack>true</unpack>
           <outputDirectory>${project.build.directory}/lib</outputDirectory>
         </configuration>
@@ -65,7 +65,7 @@
               <configuration>
                 <groupId>com.simba.googlebigquery</groupId>
                 <artifactId>googlebigquery-jdbc42</artifactId>
-                <version>${version.bigquery.jdbc}</version>
+                <version>${version.simba.google.bigquery.jdbc}</version>
                 <packaging>jar</packaging>
                 <file>${project.build.directory}/lib/GoogleBigQueryJDBC42.jar</file>
                 <generatePom>true</generatePom>
