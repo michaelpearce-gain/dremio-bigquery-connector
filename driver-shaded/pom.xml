@@ -164,11 +164,12 @@
                 <exclude>META-INF/native/libio_grpc_netty_shaded_netty_tcnative_osx_x86_64.jnilib</exclude>
               </excludes>
             </filter>
-            <!-- Filter google jks -->
+            <!-- Filter non-renamed google.jks &  -->
             <filter>
               <artifact>com.google.api-client:google-api-client</artifact>
               <excludes>
                 <exclude>com/google/api/client/googleapis/google.jks</exclude>
+                <exclude>com/google/api/client/googleapis/google-api-client.properties</exclude>
               </excludes>
             </filter>
             <filter>
@@ -205,7 +206,7 @@
               <goal>unpack-dependencies</goal>
             </goals>
             <configuration>
-              <includes>**/META-INF/native/*,com/google/api/client/googleapis/google.jks</includes>
+              <includes>**/META-INF/native/*,com/google/api/client/googleapis/google.jks,com/google/api/client/googleapis/google-api-client.properties</includes>
               <outputDirectory>${project.build.directory}/classes/</outputDirectory>
               <overWriteReleases>true</overWriteReleases>
               <overWriteSnapshots>true</overWriteSnapshots>
@@ -245,6 +246,10 @@
                 <fileSet>
                   <sourceFile>${project.build.directory}/classes/com/google/api/client/googleapis/google.jks</sourceFile>
                   <destinationFile>${project.build.directory}/classes/bqdeps/com/google/api/client/googleapis/bqdeps.google.jks</destinationFile>
+                </fileSet>
+                <fileSet>
+                  <sourceFile>${project.build.directory}/classes/com/google/api/client/googleapis/google-api-client.properties</sourceFile>
+                  <destinationFile>${project.build.directory}/classes/bqdeps/com/google/api/client/googleapis/bqdeps.google-api-client.properties</destinationFile>
                 </fileSet>
               </fileSets>
             </configuration>
