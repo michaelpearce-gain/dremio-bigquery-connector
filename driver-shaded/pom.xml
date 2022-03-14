@@ -206,7 +206,7 @@
               <goal>unpack-dependencies</goal>
             </goals>
             <configuration>
-              <includes>**/META-INF/native/*,com/google/api/client/googleapis/google.jks,com/google/api/client/googleapis/google-api-client.properties</includes>
+              <includes>**/META-INF/native/*,com/google/api/client/googleapis/google.jks,com/google/api/client/googleapis/google-api-client.properties,com/google/api/client/googleapis/google.p12</includes>
               <outputDirectory>${project.build.directory}/classes/</outputDirectory>
               <overWriteReleases>true</overWriteReleases>
               <overWriteSnapshots>true</overWriteSnapshots>
@@ -250,6 +250,10 @@
                 <fileSet>
                   <sourceFile>${project.build.directory}/classes/com/google/api/client/googleapis/google-api-client.properties</sourceFile>
                   <destinationFile>${project.build.directory}/classes/bqdeps/com/google/api/client/googleapis/bqdeps.google-api-client.properties</destinationFile>
+                </fileSet>
+                <fileSet>
+                  <sourceFile>${project.build.directory}/classes/com/google/api/client/googleapis/google.p12</sourceFile>
+                  <destinationFile>${project.build.directory}/classes/bqdeps/com/google/api/client/googleapis/bqdeps.google.p12</destinationFile>
                 </fileSet>
               </fileSets>
             </configuration>
