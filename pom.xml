@@ -21,22 +21,22 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>com.dremio.plugins</groupId>
-  <version>18.3.0-SNAPSHOT</version>
+  <version>19.4.1-SNAPSHOT</version>
   <artifactId>dremio-bigquery-plugin</artifactId>
   <name>Plugins - BigQuery Plugin</name>
   <packaging>pom</packaging>
 
   <properties>
-    <version.dremio>18.2.0-202110081842420694-7e500f14</version.dremio>
-    <version.simba.google.bigquery.jdbc>1.2.11.1014</version.simba.google.bigquery.jdbc>
+    <version.dremio>19.3.0-202201011605440679-67815cf6</version.dremio>
+    <version.simba.google.bigquery.jdbc>1.2.21.1025</version.simba.google.bigquery.jdbc>
 
     <!-- Simba JDBC Dependency versions -->
     <version.joda.time>2.10.1</version.joda.time>
-    <version.apache.avro>1.10.0</version.apache.avro>
-    <version.google.api>1.28.0</version.google.api>
-    <version.google.api.services.bigquery>v2-rev20200415-1.30.9</version.google.api.services.bigquery>
-    <version.grpc.google.cloud.biqquerystorage>0.66.0</version.grpc.google.cloud.biqquerystorage>
-    <version.google.cloud.bigquerystorage>0.101.0-beta</version.google.cloud.bigquerystorage>
+    <version.apache.avro>1.11.0</version.apache.avro>
+    <version.google.api>1.32.1</version.google.api>
+    <version.google.api.services.bigquery>v2-rev20210617-1.32.1</version.google.api.services.bigquery>
+    <version.grpc.google.cloud.biqquerystorage>0.127.2</version.grpc.google.cloud.biqquerystorage>
+    <version.google.cloud.bigquerystorage>2.8.3</version.google.cloud.bigquerystorage>
 
   </properties>
 
